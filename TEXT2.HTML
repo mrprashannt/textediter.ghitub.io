@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pooja DIDI</title>
+    <script src="https://cdn.tiny.cloud/1/39u0qzsyrdtmnwdp7b8pjgbhi00smlzxjs9p47ho5bz2skm0/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<style>
+    textarea{
+        width: 100%;
+        height: 90%;
+    }
+    .center {
+        margin: 0 auto;
+    }
+
+    .awesome {
+        font-family: futura;
+        font-style: italic;
+
+        width: 100%;
+
+        margin: 0 auto;
+        text-align: center;
+
+        color: #313131;
+        font-size: 45px;
+        font-weight: bold;
+        position: absolute;
+        -webkit-animation: colorchange 9s infinite alternate;
+    }
+
+    @-webkit-keyframes colorchange {
+        0% {
+            color: blue;
+        }
+
+        10% {
+            color: #8e44ad;
+        }
+
+        20% {
+            color: #1abc9c;
+        }
+
+        30% {
+            color: #d35400;
+        }
+
+        40% {
+            color: blue;
+        }
+
+        50% {
+            color: #34495e;
+        }
+
+        60% {
+            color: blue;
+        }
+
+        70% {
+            color: #2980b9;
+        }
+
+        80% {
+            color: #f1c40f;
+        }
+
+        90% {
+            color: #2980b9;
+        }
+
+        100% {
+            color: pink;
+        }
+    }
+</style>
+
+<body>
+    <textarea>
+   Hello Pooja Didi
+  </textarea>
+    <div class="ui container">
+        <div class="ui modal">
+            <div class="ui header">Introdection</div>
+            <div class="image content">
+                <div class="ui large image">
+                    <img src="https://raw.githubusercontent.com/mrprashannt/college/main/prashannt.jpeg" />
+                </div>
+                <div class="description">
+                    <div class="ui header">
+                        Prashant Software Developer
+                    </div>
+
+                    <p>
+                        Prashant is a skilled software developer with expertise in multiple programming languages and a
+                        passion for creating
+                        efficient and user-friendly software solutions. With a keen eye for detail and a drive for
+                        continuous improvement,
+                        Prashant thrives in the dynamic world of software development.
+                    </p>
+
+                    <p>
+                        Machine Learning, Web Development, Android Development, Data
+                        Science, you name it, it's all available on Prashant.
+                    </p>
+                    <p>
+
+                        <iconify-icon icon="vscode-icons:file-type-python" width="32.5px"></iconify-icon> &#160;
+                        <iconify-icon icon="logos:c-sharp" width="32.5px"></iconify-icon>
+                        <iconify-icon icon="logos:javascript" width="32.5px"></iconify-icon> &#160;
+                        <iconify-icon icon="devicon:c" width="32.5px"></iconify-icon>
+                        <iconify-icon icon="devicon:java-wordmark" width="32.5px"></iconify-icon> &#160;
+
+                        <iconify-icon icon="skill-icons:linux-light" width="32.5px"></iconify-icon> &#160;
+
+                        <iconify-icon icon="vscode-icons:file-type-flutter" width="32.5px"></iconify-icon> &#160;
+
+                        <iconify-icon icon="logos:docker-icon" width="32.5px"></iconify-icon> &#160;
+
+                        <iconify-icon icon="devicon:androidstudio" width="32.5px"></iconify-icon> &#160;
+
+                        <iconify-icon icon="logos:github-icon" width="32.5px"></iconify-icon> &#160;
+                        <iconify-icon icon="logos:html-5" width="15px"></iconify-icon> &#160;
+                        <iconify-icon icon="vscode-icons:file-type-ng-component-html" width="32.5px"></iconify-icon>
+                        &#160;
+
+                    </p>
+                </div>
+            </div>
+            <div class="actions">
+                <a href=""><iconify-icon icon="logos:facebook" width="30px"></iconify-icon> &#160;&#160;</a>
+                <a href=""><iconify-icon icon="logos:github-icon" width="30px"></iconify-icon>&#160;&#160;</a>
+                <a href=""><iconify-icon icon="skill-icons:instagram" width="30px"></iconify-icon>&#160;&#160;</a>
+                <a href=""><iconify-icon icon="logos:whatsapp-icon" width="30px"></iconify-icon> &#160;&#160;</a>
+                <a href=""><iconify-icon icon="logos:twitter" width="30px"></iconify-icon> &#160;&#160;</a>
+                <div class="ui negative cancel button">Sort of agree</div>
+                <div class="ui positive ok button">Agree</div>
+            </div>
+        </div>
+
+    </div>
+    <div class='center'>
+
+        <p onclick="openModal()" class="awesome">Pooja Didi</p>
+
+    </div>
+
+    <script>
+        tinymce.init({
+            selector: "textarea",
+            plugins:
+                " a11ychecker casechange code ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss",
+            toolbar:
+                " a11ychecker | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat" +
+                "code | ai" +
+                "casechange|",
+            tinycomments_mode: "embedded",
+            tinycomments_author: "Prashant",
+            mergetags_list: [
+                { value: "First.Name", title: "First Name" },
+                { value: "Email", title: "Email" },
+            ],
+            ai_request: (request, respondWith) =>
+                respondWith.string(() =>
+                    Promise.reject("See docs to implement AI Assistant")
+                ),
+        });
+    </script>
+    <script>
+        const openModal = () => {
+            $(".ui.modal")
+                .modal("setting", "transition", "horizontal flip")
+                .modal("show");
+        };
+    </script>
+</body>
+
+</html>
