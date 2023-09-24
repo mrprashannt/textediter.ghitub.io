@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#face {
+  width: 40vw;
+  height: 40vw;
+  margin: 0 auto;
+  position: relative;
+  background: yellow;
+  margin-top: 2rem;
+}
+div#face,
+div#face * {
+  border-radius: 50%;
+}
+.eye {
+  width: 25%;
+  height: 25%;
+  background: #fff;
+  position: absolute;
+  top: 20%;
+}
+.left.eye {
+  left: 20%;
+}
+.right.eye {
+  right: 20%;
+}
+.pupil {
+  background: #000;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  left: 25%;
+  transform-origin: bottom;
+}
+#mouth {
+  position: relative;
+  width: 60%;
+  left: 20%;
+  height: 25%;
+  border: 1vw solid transparent;
+  border-radius: 50%;
+  top: 50%;
+  border-bottom-color: #000;
+}
+
+    </style>
+</head>
+<body>
+    <div id="face">
+        <div class="left eye">
+            <div class="pupil"></div>
+        </div>
+        <div class="right eye">
+            <div class="pupil"></div>
+        </div>
+        <div id="mouth"></div>
+    </div>
+    <script>
+        var pupils = document.querySelectorAll(".pupil");
+
+            for (var i = 0; i < pupils.length; i++) {
+                var offset = pupils[i].getBoundingClientRect();
+                pupils[i]['centerX'] = offset.left + offset.width / 2,
+                    pupils[i]['centerY'] = offset.bottom;
+            }
+
+            function goGoogly(e) {
+                var pointerEvent = e;
+                if (e.targetTouches && e.targetTouches[0]) {
+                    e.preventDefault();
+                    pointerEvent = e.targetTouches[0];
+                    mouseX = pointerEvent.pageX;
+                    mouseY = pointerEvent.pageY;
+                } else {
+                    mouseX = e.clientX + window.pageXOffset,
+                        mouseY = e.clientY + window.pageYOffset;
+                }
+                for (var i = 0; i < pupils.length; i++) {
+                    pupils[i]['radians'] = Math.atan2(mouseX - pupils[i]['centerX'], mouseY - pupils[i]['centerY']),
+                        pupils[i]['degree'] = (pupils[i]['radians'] * (180 / Math.PI) * -1);
+                    pupils[i].style.transform = 'rotate(' + (pupils[i]['degree'] + 180) + 'deg)';
+                }
+            }
+
+            window.addEventListener('mousemove', goGoogly);
+            window.addEventListener('touchstart', goGoogly);
+            window.addEventListener('touchmove', goGoogly);
+    </script>
+</body>
+</html>
